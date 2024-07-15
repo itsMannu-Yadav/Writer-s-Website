@@ -1,1 +1,367 @@
+<html><head><base href="https://storyverse.com/browse"><title>Browse Stories - Story Verse</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
+  :root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --accent-color: #e74c3c;
+    --background-color: #f0f8ff;
+    --text-color: #333;
+    --header-bg: #2c3e50;
+    --nav-bg: #34495e;
+    --card-bg: #fff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    transition: var(--transition);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  header {
+    background-color: var(--header-bg);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+
+  nav {
+    background-color: var(--nav-bg);
+    padding: 0.5rem 0;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav li {
+    margin: 0 1rem;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+  }
+
+  nav a:hover {
+    color: var(--primary-color);
+  }
+
+  .browse-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  .search-bar, .filter-dropdown, .sort-dropdown {
+    flex: 1;
+    margin: 0 0.5rem;
+  }
+
+  .search-bar input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .filter-dropdown select, .sort-dropdown select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+  }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .story-card {
+    background-color: var(--card-bg);
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+  }
+
+  .story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .story-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .story-card-content {
+    padding: 1rem;
+  }
+
+  .story-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+  }
+
+  .story-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .story-card .author {
+    font-style: italic;
+    margin-top: 0.5rem;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .pagination button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .pagination button:hover {
+    background-color: var(--secondary-color);
+  }
+
+  .pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  footer {
+    background-color: var(--header-bg);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .browse-options {
+      flex-direction: column;
+    }
+
+    .search-bar, .filter-dropdown, .sort-dropdown {
+      margin: 0.5rem 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Browse Stories</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/browse">Browse</a></li>
+      <li><a href="/write">Write</a></li>
+      <li><a href="/communities">Communities</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="browse-options">
+      <div class="search-bar">
+        <input type="text" placeholder="Search stories...">
+      </div>
+      <div class="filter-dropdown">
+        <select>
+  <option value="">Filter by Genre</option>
+  <option value="fantasy">Fantasy</option>
+  <option value="sci-fi">Science Fiction</option>
+  <option value="romance">Romance</option>
+  <option value="mystery">Mystery</option>
+  <option value="horror">Horror</option>
+  <option value="thriller">Thriller</option>
+  <option value="historical-fiction">Historical Fiction</option>
+  <option value="young-adult">Young Adult</option>
+  <option value="literary-fiction">Literary Fiction</option>
+  <option value="dystopian">Dystopian</option>
+  <option value="paranormal">Paranormal</option>
+  <option value="adventure">Adventure</option>
+  <option value="crime">Crime</option>
+  <option value="humor">Humor</option>
+  <option value="non-fiction">Non-Fiction</option>
+</select>
+      </div>
+      <div class="sort-dropdown">
+        <select>
+  <option value="newest">Sort by Newest</option>
+  <option value="popular">Sort by Most Popular</option>
+  <option value="rating">Sort by Highest Rated</option>
+  <option value="oldest">Sort by Oldest</option>
+  <option value="comments">Sort by Most Commented</option>
+  <option value="length">Sort by Story Length</option>
+  <option value="updates">Sort by Recently Updated</option>
+</select>
+      </div>
+    </div>
+
+    <div class="story-grid">
+  <a href="/story/the-last-starship" class="story-card">
+    <img src="https://picsum.photos/seed/story1/300/200" alt="Story 1 cover" width="300" height="200">
+    <div class="story-card-content">
+      <h3>The Last Starship</h3>
+      <p>A thrilling space adventure...</p>
+      <p class="author">By Emma Johnson</p>
+    </div>
+  </a>
+  <a href="/story/whispers-in-the-dark" class="story-card">
+    <img src="https://picsum.photos/seed/story2/300/200" alt="Story 2 cover" width="300" height="200">
+    <div class="story-card-content">
+      <h3>Whispers in the Dark</h3>
+      <p>A chilling horror tale...</p>
+      <p class="author">By Michael Chen</p>
+    </div>
+  </a>
+  <a href="/story/love-in-paris" class="story-card">
+    <img src="https://picsum.photos/seed/story3/300/200" alt="Story 3 cover" width="300" height="200">
+    <div class="story-card-content">
+      <h3>Love in Paris</h3>
+      <p>A heartwarming romance...</p>
+      <p class="author">By Sophie Martin</p>
+    </div>
+  </a>
+  <a href="/story/the-time-travelers-dilemma" class="story-card">
+    <img src="https://picsum.photos/seed/story4/300/200" alt="Story 4 cover" width="300" height="200">
+    <div class="story-card-content">
+      <h3>The Time Traveler's Dilemma</h3>
+      <p>A mind-bending sci-fi story...</p>
+      <p class="author">By Alex Rivera</p>
+    </div>
+  </a>
+  <a href="/story/the-forgotten-realm" class="story-card">
+    <img src="https://picsum.photos/seed/story5/300/200" alt="Story 5 cover" width="300" height="200">
+    <div class="story-card-content">
+      <h3>The Forgotten Realm</h3>
+      <p>An epic fantasy adventure...</p>
+      <p class="author">By Liam O'Connor</p>
+    </div>
+  </a>
+  <a href="/story/echoes-of-the-past" class="story-card">
+    <img src="https://picsum.photos/seed/story6/300/200" alt="Story 6 cover" width="300" height="200">
+    <div class="story-card-content">
+      <h3>Echoes of the Past</h3>
+      <p>A gripping historical fiction...</p>
+      <p class="author">By Olivia Chen</p>
+    </div>
+  </a>
+  <a href="/story/the-alchemists-secret" class="story-card">
+    <img src="https://picsum.photos/seed/story7/300/200" alt="Story 7 cover" width="300" height="200">
+    <div class="story-card-content">
+      <h3>The Alchemist's Secret</h3>
+      <p>A magical mystery...</p>
+      <p class="author">By Daniel Rossi</p>
+    </div>
+  </a>
+  <a href="/story/neon-nights" class="story-card">
+    <img src="https://picsum.photos/seed/story8/300/200" alt="Story 8 cover" width="300" height="200">
+    <div class="story-card-content">
+      <h3>Neon Nights</h3>
+      <p>A cyberpunk thriller...</p>
+      <p class="author">By Zoe Wong</p>
+    </div>
+  </a>
+</div>
+
+    <div class="pagination">
+      <button disabled="">Previous</button>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>Next</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2023 Story Verse. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.querySelector('.search-bar input');
+      const filterSelect = document.querySelector('.filter-dropdown select');
+      const sortSelect = document.querySelector('.sort-dropdown select');
+      const storyCards = document.querySelectorAll('.story-card');
+
+      searchInput.addEventListener('input', filterStories);
+      filterSelect.addEventListener('change', filterStories);
+      sortSelect.addEventListener('change', sortStories);
+
+      function filterStories() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const selectedGenre = filterSelect.value;
+
+        storyCards.forEach(card => {
+          const title = card.querySelector('h3').textContent.toLowerCase();
+          const description = card.querySelector('p').textContent.toLowerCase();
+          const genre = card.dataset.genre; // Assuming we add data-genre attribute to story cards
+
+          const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
+          const matchesGenre = selectedGenre === '' || genre === selectedGenre;
+
+          card.style.display = matchesSearch && matchesGenre ? 'block' : 'none';
+        });
+      }
+
+      function sortStories() {
+        const sortBy = sortSelect.value;
+        const sortedCards = Array.from(storyCards).sort((a, b) => {
+          if (sortBy === 'newest') {
+            return new Date(b.dataset.date) - new Date(a.dataset.date);
+          } else if (sortBy === 'popular') {
+            return b.dataset.views - a.dataset.views;
+          } else if (sortBy === 'rating') {
+            return b.dataset.rating - a.dataset.rating;
+          }
+        });
+
+        const storyGrid = document.querySelector('.story-grid');
+        sortedCards.forEach(card => storyGrid.appendChild(card));
+      }
+    });
+  </script>
+</body></html>
