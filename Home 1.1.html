@@ -1,0 +1,1168 @@
+<html><head><base href="https://storyverse.com/"><title>Story Verse - Where Stories Come to Life</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+  :root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --accent-color: #e74c3c;
+    --background-color: #f0f8ff;
+    --text-color: #333;
+    --header-bg: #2c3e50;
+    --nav-bg: #34495e;
+    --card-bg: #fff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    transition: var(--transition);
+  }
+
+  .header {
+    background-color: var(--header-bg);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  .tagline {
+    font-style: italic;
+    margin-top: 0.5rem;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.5s;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  .nav {
+    background-color: var(--nav-bg);
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+  }
+
+  .nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav li {
+    margin: 0 1rem;
+  }
+
+  .nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+  }
+
+  .nav a:hover::after {
+    width: 100%;
+  }
+
+  .nav a i {
+    margin-right: 0.5rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    padding: 5rem 0;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    animation: slideInDown 1s ease-out;
+  }
+
+  @keyframes slideInDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: slideInUp 1s ease-out;
+  }
+
+  @keyframes slideInUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+  }
+
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+  }
+
+  .btn:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  .features {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  .feature {
+    flex: 1;
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    margin: 0 1rem;
+    text-align: center;
+    transition: var(--transition);
+  }
+
+  .feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .feature h2 {
+    color: var(--secondary-color);
+  }
+
+  .featured-stories {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+  }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .story-card {
+    background-color: var(--card-bg);
+    border-radius: 5px;
+    padding: 1rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .story-card::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(52, 152, 219, 0.2));
+    transition: var(--transition);
+  }
+
+  .story-card:hover::before {
+    top: 0;
+  }
+
+  .story-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    transition: var(--transition);
+  }
+
+  .story-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .footer {
+    background-color: var(--header-bg);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+  }
+
+  .footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  .footer a:hover {
+    color: var(--accent-color);
+  }
+
+  @media (max-width: 768px) {
+    .features {
+      flex-direction: column;
+    }
+    .feature {
+      margin: 1rem 0;
+    }
+  }
+
+  .newsletter {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .newsletter form {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .newsletter input[type="email"] {
+    padding: 0.5rem;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+  }
+
+  .newsletter .btn {
+    border-radius: 0 5px 5px 0;
+  }
+
+  .theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 1000;
+  }
+
+  .theme-toggle:hover {
+    transform: rotate(180deg);
+  }
+
+  .search-container {
+    margin-top: 2rem;
+    position: relative;
+  }
+
+  #search-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  #search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--card-bg);
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+  }
+
+  #search-results a {
+    display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: var(--transition);
+  }
+
+  #search-results a:hover {
+    background-color: var(--background-color);
+  }
+
+  .writing-prompt, .community-spotlight, .writing-challenges, .story-stats {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    margin-top: 2rem;
+  }
+
+  .spotlight-content {
+    display: flex;
+    align-items: center;
+  }
+
+  .spotlight-content img {
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+
+  .dark-theme {
+    --background-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --card-bg: #2c2c2c;
+    --shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+  }
+
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+
+  @keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }   
+  }
+</style>
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="header">
+  <div class="header-content">
+    <div class="logo">Story Verse 📚</div>
+    <div class="tagline">Where Stories Come to Life</div>
+  </div>
+  <div class="header-background">
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="clouds">
+  <style>
+    .clouds {
+      background: transparent url('https://i.imgur.com/mHbScrQ.png') repeat top center;
+      z-index: 2;
+      opacity: 0.15; /* Reduced opacity from 0.2 to 0.15 to dim the lighting */
+      animation: move-clouds-back 300s linear infinite;
+    }
+    @keyframes move-clouds-back {
+      from {background-position: 0 0;}
+      to {background-position: 10000px 0;}
+    }
+  </style>
+</div>
+  </div>
+  <style>
+    .header {
+      position: relative;
+      overflow: hidden;
+      padding: 2rem 0;
+      background: linear-gradient(135deg, #1a237e, #4a148c);
+    }
+    .header-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .logo {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    .tagline {
+      font-size: 1.2rem;
+      color: #e0e0e0;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de; }
+      to { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de; }
+    }
+    .header-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .stars, .twinkling, .clouds {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .stars {
+      background: #000 url('https://i.imgur.com/YKY28eT.png') repeat top center;
+      z-index: 0;
+    }
+    .twinkling {
+      background: transparent url('https://i.imgur.com/XYMF4ca.png') repeat top center;
+      z-index: 1;
+      animation: move-twink-back 200s linear infinite;
+    }
+    .clouds {
+      background: transparent url('https://i.imgur.com/mHbScrQ.png') repeat top center;
+      z-index: 2;
+      opacity: .4;
+      animation: move-clouds-back 200s linear infinite;
+    }
+    @keyframes move-twink-back {
+      from {background-position: 0 0;}
+      to {background-position: -10000px 5000px;}
+    }
+    @keyframes move-clouds-back {
+      from {background-position: 0 0;}
+      to {background-position: 10000px 0;}
+    }
+  </style>
+</header>
+
+  <nav class="nav">
+    <ul>
+  <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+  <li><a href="/browse"><i class="fas fa-book-open"></i> Browse</a></li>
+  <li><a href="/write"><i class="fas fa-pen-fancy"></i> Write</a></li>
+  <li><a href="/communities"><i class="fas fa-users"></i> Communities</a></li>
+  <li><a href="/forums"><i class="fas fa-comments"></i> Forums</a></li>
+  <li><a href="/award-winners"><i class="fas fa-trophy"></i> Award Winning GOATs</a></li>
+  <li><a href="/about"><i class="fas fa-info-circle"></i> About</a></li>
+</ul>
+  </nav>
+
+  <div class="hero">
+  <div class="hero-content">
+    <h1>Unleash Your Imagination 🚀</h1>
+    <p>Create, share, and explore captivating stories from around the world.</p>
+    <a href="/write" class="btn">Start Writing <i class="fas fa-pencil-alt"></i></a>
+  </div>
+  <style>
+    .hero {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      text-align: center;
+      padding: 5rem 0;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') no-repeat center center;
+      background-size: cover;
+      opacity: 0.2;
+      z-index: 1;
+      animation: heroBackground 20s ease-in-out infinite alternate;
+    }
+    @keyframes heroBackground {
+      0% {
+        transform: scale(1) rotate(0deg);
+      }
+      50% {
+        transform: scale(1.1) rotate(1deg);
+      }
+      100% {
+        transform: scale(1) rotate(0deg);
+      }
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      animation: slideInDown 1s ease-out;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      animation: slideInUp 1s ease-out;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #6a11cb;
+      padding: 0.8rem 1.5rem;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background-color: #2575fc;
+      color: #ffffff;
+    }
+    @keyframes slideInDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    @keyframes slideInUp {
+      from {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</div>
+
+  <div class="container">
+    <section class="features">
+  <a href="/create" class="feature floating">
+    <h2>📝 Create</h2>
+    <p>Craft your stories with our intuitive writing tools and AI assistance.</p>
+    <style>
+      @keyframes floating {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+      .feature {
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .feature:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+    </style>
+  </a>
+  <a href="/share" class="feature floating" style="animation-delay: 0.5s;">
+    <h2>🌍 Share</h2>
+    <p>Publish your stories and reach readers from across the globe.</p>
+  </a>
+  <a href="/discover" class="feature floating" style="animation-delay: 1s;">
+    <h2>🔍 Discover</h2>
+    <p>Explore a vast library of stories from talented writers worldwide.</p>
+  </a>
+</section>
+
+    <section class="featured-stories">
+  <h2>Featured Stories ✨</h2>
+  <div class="story-carousel">
+    <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+    <div class="story-grid">
+      <a href="/story/the-last-starship" class="story-card">
+        <div class="story-card-inner">
+          <div class="story-card-front">
+            <img src="story1.jpg" alt="The Last Starship" width="250" height="200">
+            <h3 class="dynamic-text">The Last Starship 🚀</h3>
+          </div>
+          <div class="story-card-back">
+            <p>A thrilling space adventure by Emma Johnson</p>
+            <span class="read-more">Read More →</span>
+          </div>
+        </div>
+      </a>
+      <a href="/story/whispers-in-the-dark" class="story-card">
+        <div class="story-card-inner">
+          <div class="story-card-front">
+            <img src="story2.jpg" alt="Whispers in the Dark" width="250" height="200">
+            <h3 class="dynamic-text">Whispers in the Dark 👻</h3>
+          </div>
+          <div class="story-card-back">
+            <p>A chilling horror tale by Michael Chen</p>
+            <span class="read-more">Read More →</span>
+          </div>
+        </div>
+      </a>
+      <a href="/story/love-in-paris" class="story-card">
+        <div class="story-card-inner">
+          <div class="story-card-front">
+            <img src="story3.jpg" alt="Love in Paris" width="250" height="200">
+            <h3 class="dynamic-text">Love in Paris 💖</h3>
+          </div>
+          <div class="story-card-back">
+            <p>A heartwarming romance by Sophie Martin</p>
+            <span class="read-more">Read More →</span>
+          </div>
+        </div>
+      </a>
+      <a href="/story/the-time-travelers-dilemma" class="story-card">
+        <div class="story-card-inner">
+          <div class="story-card-front">
+            <img src="story4.jpg" alt="The Time Traveler's Dilemma" width="250" height="200">
+            <h3 class="dynamic-text">The Time Traveler's Dilemma ⏳</h3>
+          </div>
+          <div class="story-card-back">
+            <p>A mind-bending sci-fi story by Alex Rivera</p>
+            <span class="read-more">Read More →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="story-dots"></div>
+  
+  <style>
+    .featured-stories {
+      background-color: var(--card-bg);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .dark-theme .featured-stories {
+      background-color: #2c3e50;
+      box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    }
+    
+    .story-grid {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1.5rem;
+      padding: 1rem 0;
+    }
+    
+    .story-card {
+      flex: 0 0 auto;
+      width: 250px;
+      height: 350px;
+      perspective: 1000px;
+      scroll-snap-align: start;
+    }
+    
+    .story-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    
+    .story-card:hover .story-card-inner {
+      transform: rotateY(180deg);
+    }
+    
+    .story-card-front, .story-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .story-card-front {
+      background-color: #f0f0f0;
+    }
+    
+    .dark-theme .story-card-front {
+      background-color: #34495e;
+    }
+    
+    .story-card-back {
+      background-color: #2980b9;
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+    }
+    
+    .dark-theme .story-card-back {
+      background-color: #2c3e50;
+    }
+    
+    .story-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .story-card h3 {
+      margin: 1rem 0;
+      font-size: 1.2rem;
+      color: #333;
+    }
+    
+    .dark-theme .story-card h3 {
+      color: #ecf0f1;
+    }
+    
+    .read-more {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #e74c3c;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .read-more:hover {
+      background-color: #c0392b;
+    }
+    
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.7);
+      border: none;
+      font-size: 1.5rem;
+      padding: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .dark-theme .carousel-btn {
+      background-color: rgba(52, 73, 94, 0.7);
+      color: #ecf0f1;
+    }
+    
+    .prev-btn {
+      left: 0;
+      border-radius: 0 5px 5px 0;
+    }
+    
+    .next-btn {
+      right: 0;
+      border-radius: 5px 0 0 5px;
+    }
+    
+    .carousel-btn:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .dark-theme .carousel-btn:hover {
+      background-color: rgba(52, 73, 94, 0.9);
+    }
+    
+    .story-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    
+    .story-dot {
+      width: 10px;
+      height: 10px;
+      background-color: #bdc3c7;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .dark-theme .story-dot {
+      background-color: #7f8c8d;
+    }
+    
+    .story-dot.active {
+      background-color: #3498db;
+    }
+    
+    .dark-theme .story-dot.active {
+      background-color: #2980b9;
+    }
+  </style>
+</section>
+
+    <section class="newsletter">
+      <h2>📬 Subscribe to Our Newsletter</h2>
+      <p>Stay updated with the latest stories and writing tips!</p>
+      <form id="newsletter-form">
+        <input type="email" placeholder="Enter your email" required="">
+        <button type="submit" class="btn">Subscribe <i class="fas fa-paper-plane"></i></button>
+      </form>
+    </section>
+
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search stories... 🔍" style="width: 100%; padding: 12px 20px; margin: 8px 0; box-sizing: border-box; border: 2px solid #3498db; border-radius: 25px; font-size: 16px; transition: all 0.3s ease-in-out; outline: none;">
+      <div id="search-results"></div>
+    </div>
+
+    <section class="writing-prompt">
+  <h2>Need Inspiration? 💡</h2>
+  <p id="prompt-text">Click the button below to generate a random writing prompt!</p>
+  <button id="generate-prompt" class="btn">Generate Prompt <i class="fas fa-random"></i></button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const generatePromptBtn = document.getElementById('generate-prompt');
+      const promptText = document.getElementById('prompt-text');
+      const prompts = [
+        "Write a story about a world where dreams are traded as currency.",
+        "Describe a day in the life of the last human on Earth.",
+        "Create a tale about a mysterious door that appears in different places around the world.",
+        "Imagine a society where people's emotions are visible as colors around their bodies.",
+        "Craft a narrative about a time traveler stuck in a loop between two significant historical events.",
+        "Write about a character who wakes up one day with the ability to hear plants' thoughts.",
+        "Describe a future where books are forbidden and storytellers are revered as heroes.",
+        "Create a story centered around an object that can manipulate probability.",
+        "Imagine a world where silence is a rare and valuable commodity.",
+        "Write about a detective who can only solve crimes by tasting evidence."
+      ];
+
+      generatePromptBtn.addEventListener('click', () => {
+        const randomPrompt = prompts[Math.floor(Math.random() * prompts.length)];
+        promptText.textContent = randomPrompt;
+        promptText.style.animation = 'none';
+        promptText.offsetHeight; // Trigger reflow
+        promptText.style.animation = 'fadeIn 0.5s';
+      });
+    });
+  </script>
+</section>
+
+    <section class="community-spotlight">
+  <h2>Community Spotlight 🌟</h2>
+  <div class="spotlight-content">
+    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=100&amp;h=100&amp;q=80" alt="Featured Author: Jane Doe" width="100" height="100" id="spotlight-image">
+    <div class="spotlight-text">
+      <h3 id="spotlight-title">Author of the Week: Jane Doe</h3>
+      <p id="spotlight-description">Jane's latest story "Echoes of Eternity" has captivated readers with its unique blend of historical fiction and magical realism.</p>
+      <a href="/author/jane-doe" class="btn" id="spotlight-link" style="border: 2px solid #3498db; border-radius: 5px;">Read More <i class="fas fa-chevron-right"></i></a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const spotlightTitles = [
+        "Author of the Week: Jane Doe",
+        "Author of the Month: Alex Chen",
+        "Author of the Day: Maria Rodriguez"
+      ];
+      const spotlightDescriptions = [
+        "Jane's latest story \"Echoes of Eternity\" has captivated readers with its unique blend of historical fiction and magical realism.",
+        "Alex's groundbreaking novel \"Digital Dreams\" has earned them the coveted Author of the Month title, exploring the boundaries between humanity and technology in the cyberpunk genre.",
+        "Maria's heartwarming short story \"Abuela's Kitchen\" combines family recipes with touching personal narratives, making her our Author of the Day."
+      ];
+      const spotlightImages = [
+        "jane-doe-author.jpg",
+        "alex-chen-author.jpg",
+        "maria-rodriguez-author.jpg"
+      ];
+      const spotlightLinks = [
+        "/author/jane-doe",
+        "/author/alex-chen",
+        "/author/maria-rodriguez"
+      ];
+      
+      let currentIndex = 0;
+      const spotlightTitle = document.getElementById('spotlight-title');
+      const spotlightDescription = document.getElementById('spotlight-description');
+      const spotlightImage = document.getElementById('spotlight-image');
+      const spotlightLink = document.getElementById('spotlight-link');
+      
+      function updateSpotlight() {
+        spotlightTitle.style.opacity = 0;
+        spotlightDescription.style.opacity = 0;
+        spotlightImage.style.opacity = 0;
+        
+        setTimeout(() => {
+          spotlightTitle.textContent = spotlightTitles[currentIndex];
+          spotlightDescription.textContent = spotlightDescriptions[currentIndex];
+          spotlightImage.src = spotlightImages[currentIndex];
+          spotlightImage.alt = `Featured Author: ${spotlightTitles[currentIndex].split(': ')[1]}`;
+          spotlightLink.href = spotlightLinks[currentIndex];
+          
+          spotlightTitle.style.opacity = 1;
+          spotlightDescription.style.opacity = 1;
+          spotlightImage.style.opacity = 1;
+          
+          currentIndex = (currentIndex + 1) % spotlightTitles.length;
+        }, 500);
+      }
+      
+      setInterval(updateSpotlight, 5000);
+    });
+  </script>
+
+  <style>
+    #spotlight-title, #spotlight-description, #spotlight-image {
+      transition: opacity 0.5s ease-in-out;
+    }
+    #spotlight-image {
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</section>
+
+    <section class="writing-challenges">
+      <h2>Weekly Writing Challenges 🏆</h2>
+      <ul>
+        <li>🎭 Monday Microfiction: Write a complete story in exactly 50 words</li>
+        <li>🌍 Wednesday Worldbuilding: Create a unique setting for your next story</li>
+        <li>📜 Friday First Lines: Craft an irresistible opening sentence</li>
+      </ul>
+      <a href="/challenges" class="btn" style="border: 2px solid #3498db; border-radius: 5px;">Join a Challenge <i class="fas fa-flag-checkered"></i></a>
+    </section>
+
+    <section class="story-stats">
+      <h2>Story Verse in Numbers 📊</h2>
+      <div class="stat-grid">
+        <div class="stat-item">
+          <span class="stat-number" id="author-count">10,000+</span>
+          <span class="stat-label">Authors</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="story-count">50,000+</span>
+          <span class="stat-label">Stories</span>
+        </div>
+        <div class="stat-item">
+  <span class="stat-number" id="reader-count">100+</span>
+  <span class="stat-label">Readers</span>
+</div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+  <p>© 2023 Story Verse. All rights reserved. | <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a> | <a href="/contact">Contact Us</a> | <a href="/join">Join Us</a> | <a href="/about">About Us</a></p>
+</footer>
+
+  <button id="theme-toggle" class="theme-toggle">🌙</button>
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+  const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-theme');
+    themeToggle.textContent = body.classList.contains('dark-theme') ? '☀️' : '🌙';
+  });
+
+  const generatePromptBtn = document.getElementById('generate-prompt');
+  const promptText = document.getElementById('prompt-text');
+  const prompts = [
+    "Write a story about a world where dreams are traded as currency.",
+    "Describe a day in the life of the last human on Earth.",
+    "Create a tale about a mysterious door that appears in different places around the world.",
+    "Imagine a society where people's emotions are visible as colors around their bodies.",
+    "Craft a narrative about a time traveler stuck in a loop between two significant historical events."
+  ];
+
+  generatePromptBtn.addEventListener('click', () => {
+    const randomPrompt = prompts[Math.floor(Math.random() * prompts.length)];
+    promptText.textContent = randomPrompt;
+    promptText.style.animation = 'none';
+    promptText.offsetHeight; // Trigger reflow
+    promptText.style.animation = 'fadeIn 0.5s';
+  });
+
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const stories = [
+    "The Last Starship",
+    "Whispers in the Dark",
+    "Love in Paris",
+    "The Time Traveler's Dilemma",
+    "Echoes of Eternity",
+    "The Forgotten Realm",
+    "Shadows of Yesterday",
+    "Beyond the Horizon"
+  ];
+
+  searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    const filteredStories = stories.filter(story => 
+      story.toLowerCase().includes(searchTerm)
+    );
+    
+    searchResults.innerHTML = '';
+    if (filteredStories.length > 0 && searchTerm) {
+      filteredStories.forEach(story => {
+        const storyLink = document.createElement('a');
+        storyLink.href = `/story/${story.toLowerCase().replace(/ /g, '-')}`;
+        storyLink.textContent = story;
+        searchResults.appendChild(storyLink);
+      });
+      searchResults.style.display = 'block';
+    } else {
+      searchResults.style.display = 'none';
+    }
+  });
+
+  // Animate stats
+  const stats = document.querySelectorAll('.stat-number');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateStat(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  stats.forEach(stat => observer.observe(stat));
+
+  function animateStat(statElement) {
+    const finalValue = parseInt(statElement.textContent);
+    let currentValue = 0;
+    const duration = 2000; // 2 seconds
+    const stepTime = 50; // Update every 50ms
+    const steps = duration / stepTime;
+    const increment = finalValue / steps;
+
+    const timer = setInterval(() => {
+      currentValue += increment;
+      if (currentValue >= finalValue) {
+        clearInterval(timer);
+        currentValue = finalValue;
+      }
+      statElement.textContent = Math.floor(currentValue).toLocaleString() + '+';
+    }, stepTime);
+  }
+
+  // Parallax effect for hero section
+  const hero = document.querySelector('.hero');
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.pageYOffset;
+    hero.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+  });
+});
+</script>
+
+
+</body></html>
