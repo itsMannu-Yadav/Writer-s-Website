@@ -1,0 +1,382 @@
+<html><head><base href="https://storyverse.com/create"><title>Create Your Story - Story Verse</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+  :root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --accent-color: #e74c3c;
+    --background-color: #f0f8ff;
+    --text-color: #333;
+    --header-bg: #2c3e50;
+    --nav-bg: #34495e;
+    --card-bg: #fff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    transition: var(--transition);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .header {
+    background-color: var(--header-bg);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  .nav {
+    background-color: var(--nav-bg);
+    padding: 0.5rem 0;
+  }
+
+  .nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav li {
+    margin: 0 1rem;
+  }
+
+  .nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .create-story {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    margin-top: 2rem;
+  }
+
+  .create-story h1 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  textarea {
+    height: 200px;
+    resize: vertical;
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .btn:hover {
+    background-color: var(--secondary-color);
+  }
+
+  .ai-assistant {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+
+  .ai-assistant h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+  }
+
+  .ai-suggestion {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .writing-tips {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .writing-tips h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+  }
+
+  .writing-tips ul {
+    padding-left: 1.5rem;
+  }
+
+  .footer {
+    background-color: var(--header-bg);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Story Verse 📚</div>
+  </header>
+
+  <nav class="nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/browse">Browse</a></li>
+      <li><a href="/write">Write</a></li>
+      <li><a href="/communities">Communities</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section class="create-story">
+  <h1>Create Your Story</h1>
+  <p>Looking for inspiration? Check out this amazing story: <a href="https://websim.ai/@glowingriver13121346/the-last-starship-story-verse">The Last Starship</a></p>
+  <form id="story-form">
+  <div class="form-group">
+    <label for="story-type">Story Type</label>
+    <select id="story-type" name="story-type" required="">
+      <option value="">Select a story type</option>
+      <option value="story-reel">Story Reel</option>
+      <option value="write-story">Write Story</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" required="">
+  </div>
+  <div class="form-group">
+    <label for="genre">Genre</label>
+    <select id="genre" name="genre" required="">
+      <option value="">Select a genre</option>
+      <option value="fantasy">Fantasy</option>
+      <option value="sci-fi">Science Fiction</option>
+      <option value="mystery">Mystery</option>
+      <option value="romance">Romance</option>
+      <option value="horror">Horror</option>
+      <option value="thriller">Thriller</option>
+      <option value="historical">Historical Fiction</option>
+      <option value="literary">Literary Fiction</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="synopsis">Synopsis</label>
+    <textarea id="synopsis" name="synopsis" required="" style="height: 150px;"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="content">Story Content</label>
+    <textarea id="content" name="content" required="" style="display: none;"></textarea>
+    <div class="rich-text-editor">
+      <div class="toolbar">
+        <!-- Toolbar buttons -->
+      </div>
+      <div id="editor" contenteditable="true" style="border: 1px solid #ccc; min-height: 200px; padding: 10px; border-radius: 5px;"></div>
+    </div>
+  </div>
+  <button type="submit" class="btn">Save Draft</button>
+  <button type="button" class="btn" style="background-color: var(--accent-color);">Publish</button>
+</form>
+
+  <div class="ai-writer">
+    <h2>AI Story Generator</h2>
+    <p>Let our AI help you kickstart your story! Select a genre and enter a brief prompt, and we'll generate a short story snippet for you.</p>
+    <div class="form-group">
+      <label for="ai-genre">Select Genre:</label>
+      <select id="ai-genre" name="ai-genre" required="">
+        <option value="">Select a genre</option>
+        <option value="fantasy">Fantasy</option>
+        <option value="sci-fi">Science Fiction</option>
+        <option value="mystery">Mystery</option>
+        <option value="romance">Romance</option>
+        <option value="horror">Horror</option>
+        <option value="thriller">Thriller</option>
+        <option value="historical">Historical Fiction</option>
+        <option value="literary">Literary Fiction</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="ai-prompt">Enter your prompt:</label>
+      <input type="text" id="ai-prompt" name="ai-prompt" placeholder="E.g., 'A mysterious door in the forest'" required="">
+    </div>
+    <button id="generate-story" class="btn" style="background-color: var(--secondary-color);">Generate Story</button>
+    <div id="ai-generated-story" class="ai-story-output">
+      <h3>Generated Story:</h3>
+      <p>Your AI-generated story will appear here...</p>
+    </div>
+  </div>
+
+  <div class="writing-tools">
+    <h2>Writing Tools</h2>
+    <button id="generate-prompt" class="btn">Generate Writing Prompt</button>
+    <button id="generate-character-name" class="btn">Character Name Generator</button>
+    <button id="generate-plot-twist" class="btn">Random Plot Twist</button>
+    <button id="generate-world-building" class="btn">World Building Ideas</button>
+    <div id="writing-tool-output" class="writing-tool-output">
+      <p>Your generated content will appear here...</p>
+    </div>
+  </div>
+</section>
+
+    <section class="ai-assistant">
+      <h2>AI Writing Assistant</h2>
+      <div class="ai-suggestion">
+        <p>Based on your genre selection, here are some plot ideas:</p>
+        <ul id="plot-ideas">
+          <!-- Plot ideas will be dynamically inserted here -->
+        </ul>
+      </div>
+      <div class="ai-suggestion">
+        <p>Need help with character development? Try these prompts:</p>
+        <ul id="character-prompts">
+          <!-- Character prompts will be dynamically inserted here -->
+        </ul>
+      </div>
+      <button id="generate-ideas" class="btn">Generate More Ideas</button>
+    </section>
+
+    <section class="writing-tips">
+      <h2>Writing Tips</h2>
+      <ul>
+        <li>Start with a strong hook to grab your reader's attention.</li>
+        <li>Show, don't tell. Use descriptive language to paint a vivid picture.</li>
+        <li>Develop your characters through their actions and dialogue.</li>
+        <li>Create conflict and tension to keep your readers engaged.</li>
+        <li>Edit and revise your work multiple times for the best results.</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <p>© 2023 Story Verse. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const genreSelect = document.getElementById('genre');
+      const plotIdeas = document.getElementById('plot-ideas');
+      const characterPrompts = document.getElementById('character-prompts');
+      const generateIdeasBtn = document.getElementById('generate-ideas');
+
+      const ideas = {
+        fantasy: [
+          "A young apprentice discovers they have a unique magical ability that hasn't been seen in centuries.",
+          "A group of unlikely heroes must unite to prevent an ancient prophecy from coming true.",
+          "A forgotten god returns to a world that no longer believes in magic."
+        ],
+        "sci-fi": [
+          "A colony ship's AI malfunctions, leaving the passengers to fend for themselves on an alien world.",
+          "Time travelers from the future arrive with a warning about a catastrophic event.",
+          "A scientist creates a device that allows people to share consciousness, with unexpected consequences."
+        ],
+        mystery: [
+          "A detective must solve a locked-room murder in a high-tech smart home.",
+          "A small town is rocked by a series of disappearances that seem to be linked to local folklore.",
+          "An amnesiac wakes up at a crime scene and must piece together their identity and involvement."
+        ],
+        romance: [
+          "Two rival chefs are forced to work together in a high-stakes cooking competition.",
+          "A jaded divorce lawyer falls for their client's ex-spouse.",
+          "Childhood sweethearts reconnect after years apart, but one of them is engaged to someone else."
+        ],
+        horror: [
+          "A family moves into a house that seems to be alive and has malevolent intentions.",
+          "An ancient curse is unleashed when archaeologists disturb a long-forgotten tomb.",
+          "A small town is cut off from the outside world as a mysterious fog descends."
+        ]
+      };
+
+      const characterPromptslist = [
+        "Describe your protagonist's biggest fear and how it affects their decisions.",
+        "What is your antagonist's backstory that explains their motivations?",
+        "Create a supporting character with a unique quirk or talent that becomes crucial to the plot.",
+        "Develop a character arc for your protagonist. How do they change from the beginning to the end of the story?",
+        "Write a scene that reveals your character's true nature through their actions, not their words."
+      ];
+
+      function updateAISuggestions() {
+        const selectedGenre = genreSelect.value;
+        if (selectedGenre && ideas[selectedGenre]) {
+          plotIdeas.innerHTML = ideas[selectedGenre].map(idea => `<li>${idea}</li>`).join('');
+        } else {
+          plotIdeas.innerHTML = "<li>Please select a genre for plot ideas.</li>";
+        }
+
+        characterPrompts.innerHTML = characterPromptslist.map(prompt => `<li>${prompt}</li>`).join('');
+      }
+
+      genreSelect.addEventListener('change', updateAISuggestions);
+      generateIdeasBtn.addEventListener('click', updateAISuggestions);
+
+      // Initial update
+      updateAISuggestions();
+
+      // Form submission (for demonstration purposes)
+      const storyForm = document.getElementById('story-form');
+      storyForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Your story draft has been saved!');
+      });
+    });
+  </script>
+
+</body></html>
