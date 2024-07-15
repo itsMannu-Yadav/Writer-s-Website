@@ -1,0 +1,223 @@
+<html><head><base href="https://storyverse.com/communities"><title>Story Verse - Writing Communities</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+  :root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --accent-color: #e74c3c;
+    --background-color: #f0f8ff;
+    --text-color: #333;
+    --header-bg: #2c3e50;
+    --nav-bg: #34495e;
+    --card-bg: #fff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    transition: var(--transition);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .header {
+    background-color: var(--header-bg);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+
+  .nav {
+    background-color: var(--nav-bg);
+    padding: 0.5rem 0;
+  }
+
+  .nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav li {
+    margin: 0 1rem;
+  }
+
+  .nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .communities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .community-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+  }
+
+  .community-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .community-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .community-card-content {
+    padding: 1.5rem;
+  }
+
+  .community-card h2 {
+    margin-top: 0;
+    color: var(--secondary-color);
+  }
+
+  .community-card p {
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: var(--transition);
+  }
+
+  .btn:hover {
+    background-color: var(--secondary-color);
+  }
+
+  .footer {
+    background-color: var(--header-bg);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .communities-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+  <header class="header">
+    <h1>Story Verse Writing Communities</h1>
+  </header>
+
+  <nav class="nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/browse">Browse</a></li>
+      <li><a href="/write">Write</a></li>
+      <li><a href="/communities">Communities</a></li>
+      <li><a href="/forums">Forums</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2>Discover Your Writing Tribe</h2>
+    <p>Join vibrant communities of writers, share your work, and grow together in your craft.</p>
+
+    <div class="communities-grid">
+      <div class="community-card">
+        <img src="fantasy-writers.jpg" alt="Fantasy Writers Guild" width="300" height="200">
+        <div class="community-card-content">
+          <h2>Fantasy Writers Guild</h2>
+          <p>Craft epic tales of magic, adventure, and mythical worlds with fellow fantasy enthusiasts.</p>
+          <a href="/communities/fantasy-writers-guild" class="btn">Join Community</a>
+        </div>
+      </div>
+
+      <div class="community-card">
+        <img src="sci-fi-explorers.jpg" alt="Sci-Fi Explorers" width="300" height="200">
+        <div class="community-card-content">
+          <h2>Sci-Fi Explorers</h2>
+          <p>Boldly go where no writer has gone before. Explore futuristic concepts and alien worlds.</p>
+          <a href="/communities/sci-fi-explorers" class="btn">Join Community</a>
+        </div>
+      </div>
+
+      <div class="community-card">
+        <img src="romance-writers.jpg" alt="Heart&Quill Romance Writers" width="300" height="200">
+        <div class="community-card-content">
+          <h2>Heart&amp;Quill Romance Writers</h2>
+          <p>Pen captivating love stories and discuss the art of writing swoon-worthy romance.</p>
+          <a href="/communities/heartandquill-romance" class="btn">Join Community</a>
+        </div>
+      </div>
+
+      <div class="community-card">
+        <img src="mystery-sleuths.jpg" alt="Mystery Sleuths Society" width="300" height="200">
+        <div class="community-card-content">
+          <h2>Mystery Sleuths Society</h2>
+          <p>Unravel the secrets of crafting suspenseful mysteries and thrilling whodunits.</p>
+          <a href="/communities/mystery-sleuths" class="btn">Join Community</a>
+        </div>
+      </div>
+
+      <div class="community-card">
+        <img src="young-adult.jpg" alt="YA Wordsmiths" width="300" height="200">
+        <div class="community-card-content">
+          <h2>YA Wordsmiths</h2>
+          <p>Connect with writers passionate about creating compelling stories for young adults.</p>
+          <a href="/communities/ya-wordsmiths" class="btn">Join Community</a>
+        </div>
+      </div>
+
+      <div class="community-card">
+        <img src="poetry-corner.jpg" alt="Poet's Corner" width="300" height="200">
+        <div class="community-card-content">
+          <h2>Poet's Corner</h2>
+          <p>Express yourself through verse, experiment with forms, and share your poetic creations.</p>
+          <a href="/communities/poets-corner" class="btn">Join Community</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="create-community">
+      <h2>Can't find your niche?</h2>
+      <p>Start your own writing community and gather like-minded wordsmiths!</p>
+      <a href="/communities/create" class="btn">Create a Community</a>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <p>© 2023 Story Verse. All rights reserved.</p>
+  </footer>
+</body></html>

@@ -1,0 +1,344 @@
+<html><head><base href="https://storyverse.com/discover"><title>Discover Stories - Story Verse</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+  :root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --accent-color: #e74c3c;
+    --background-color: #f0f8ff;
+    --text-color: #333;
+    --header-bg: #2c3e50;
+    --nav-bg: #34495e;
+    --card-bg: #fff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    transition: var(--transition);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  h1, h2, h3 {
+    color: var(--secondary-color);
+  }
+
+  .discover-header {
+    background: linear-gradient(135deg, #3498db, #8e44ad);
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+
+  .discover-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .discover-header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .search-bar input {
+    width: 60%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px 0 0 5px;
+  }
+
+  .search-bar button {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .search-bar button:hover {
+    background-color: #c0392b;
+  }
+
+  .genre-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .genre-filter {
+    padding: 0.5rem 1rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .genre-filter:hover, .genre-filter.active {
+    background-color: var(--primary-color);
+    color: white;
+  }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .story-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+  }
+
+  .story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .story-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .story-content {
+    padding: 1.5rem;
+  }
+
+  .story-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .story-author {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .story-excerpt {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .read-more {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: var(--transition);
+  }
+
+  .read-more:hover {
+    background-color: var(--secondary-color);
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .pagination button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .pagination button:hover {
+    background-color: var(--secondary-color);
+  }
+
+  .pagination button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 768px) {
+    .story-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+  <header class="discover-header">
+    <h1>Discover Captivating Stories</h1>
+    <p>Explore a world of imagination, adventure, and emotion through our diverse collection of stories.</p>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for stories, authors, or genres...">
+      <button><i class="fas fa-search"></i> Search</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="genre-filters">
+  <button class="genre-filter active">All</button>
+  <button class="genre-filter">Fantasy</button>
+  <button class="genre-filter">Science Fiction</button>
+  <button class="genre-filter">Mystery</button>
+  <button class="genre-filter">Romance</button>
+  <button class="genre-filter">Horror</button>
+  <button class="genre-filter">Adventure</button>
+  <button class="genre-filter">Thriller</button>
+  <button class="genre-filter">Historical Fiction</button>
+  <button class="genre-filter">Contemporary</button>
+  <button class="genre-filter">Young Adult</button>
+  <button class="genre-filter">Literary Fiction</button>
+  <button class="genre-filter">Dystopian</button>
+</div>
+
+    <div class="story-grid">
+  <h2 style="grid-column: 1 / -1; margin-bottom: 1rem;">Featured Story Reels</h2>
+  <div class="story-reels" style="display: flex; overflow-x: auto; gap: 1rem; padding-bottom: 1rem; margin-bottom: 2rem; grid-column: 1 / -1;">
+  <div class="story-reel" style="flex: 0 0 auto; width: 120px; text-align: center; cursor: pointer;" onclick="location.href='/genre/fantasy';">
+    <img src="https://images.unsplash.com/photo-1516541196182-6bdb0516ed27?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Fantasy reel thumbnail" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #3498db;">
+    <p style="margin-top: 0.5rem; font-weight: bold;">Fantasy</p>
+  </div>
+  <div class="story-reel" style="flex: 0 0 auto; width: 120px; text-align: center; cursor: pointer;" onclick="location.href='/genre/sci-fi';">
+    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Sci-Fi reel thumbnail" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #3498db;">
+    <p style="margin-top: 0.5rem; font-weight: bold;">Sci-Fi</p>
+  </div>
+  <div class="story-reel" style="flex: 0 0 auto; width: 120px; text-align: center; cursor: pointer;" onclick="location.href='/genre/mystery';">
+    <img src="https://images.unsplash.com/photo-1590856029620-9b5a4825d3be?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Mystery reel thumbnail" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #3498db;">
+    <p style="margin-top: 0.5rem; font-weight: bold;">Mystery</p>
+  </div>
+  <div class="story-reel" style="flex: 0 0 auto; width: 120px; text-align: center; cursor: pointer;" onclick="location.href='/genre/romance';">
+    <img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Romance reel thumbnail" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #3498db;">
+    <p style="margin-top: 0.5rem; font-weight: bold;">Romance</p>
+  </div>
+  <div class="story-reel" style="flex: 0 0 auto; width: 120px; text-align: center; cursor: pointer;" onclick="location.href='/genre/horror';">
+    <img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Horror reel thumbnail" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #3498db;">
+    <p style="margin-top: 0.5rem; font-weight: bold;">Horror</p>
+  </div>
+  <div class="story-reel" style="flex: 0 0 auto; width: 120px; text-align: center; cursor: pointer;" onclick="location.href='/genre/adventure';">
+    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Adventure reel thumbnail" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #3498db;">
+    <p style="margin-top: 0.5rem; font-weight: bold;">Adventure</p>
+  </div>
+  <div class="story-reel" style="flex: 0 0 auto; width: 120px; text-align: center; cursor: pointer;" onclick="location.href='/genre/thriller';">
+    <img src="https://images.unsplash.com/photo-1587220630116-02a9e1f02888?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Thriller reel thumbnail" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #3498db;">
+    <p style="margin-top: 0.5rem; font-weight: bold;">Thriller</p>
+  </div>
+  <div class="story-reel" style="flex: 0 0 auto; width: 120px; text-align: center; cursor: pointer;" onclick="location.href='/genre/historical';">
+    <img src="https://images.unsplash.com/photo-1599689019338-50deb475f380?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Historical Fiction reel thumbnail" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #3498db;">
+    <p style="margin-top: 0.5rem; font-weight: bold;">Historical</p>
+  </div>
+</div>
+  <div class="story-card">
+    <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="The Enchanted Forest" class="story-image">
+    <div class="story-content">
+      <h3 class="story-title">The Enchanted Forest</h3>
+      <p class="story-author">By Olivia Green</p>
+      <p class="story-excerpt">In a world where trees whisper secrets and magic flows like rivers, young Aria discovers her destiny as the guardian of nature...</p>
+      <a href="/story/the-enchanted-forest" class="read-more">Read More</a>
+    </div>
+  </div>
+  <div class="story-card">
+    <img src="https://images.unsplash.com/photo-1501862700950-18382cd41497?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Starship Odyssey" class="story-image">
+    <div class="story-content">
+      <h3 class="story-title">Starship Odyssey</h3>
+      <p class="story-author">By Marcus Reed</p>
+      <p class="story-excerpt">Captain Sarah Chen leads her diverse crew on a perilous mission to save humanity from an impending cosmic disaster...</p>
+      <a href="/story/starship-odyssey" class="read-more">Read More</a>
+    </div>
+  </div>
+  <div class="story-card">
+    <img src="https://images.unsplash.com/photo-1509557965875-b88c97052f0e?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="The Midnight Detective" class="story-image">
+    <div class="story-content">
+      <h3 class="story-title">The Midnight Detective</h3>
+      <p class="story-author">By Elena Frost</p>
+      <p class="story-excerpt">In the shadowy streets of New Orleans, Detective Jack Raven uncovers a conspiracy that threatens to unravel reality itself...</p>
+      <a href="/story/the-midnight-detective" class="read-more">Read More</a>
+    </div>
+  </div>
+  <div class="story-card">
+    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Love in the Time of Algorithms" class="story-image">
+    <div class="story-content">
+      <h3 class="story-title">Love in the Time of Algorithms</h3>
+      <p class="story-author">By Sophia Chen</p>
+      <p class="story-excerpt">In a world where AI predicts perfect matches, two people defy the system to find love on their own terms...</p>
+      <a href="/story/love-in-the-time-of-algorithms" class="read-more">Read More</a>
+    </div>
+  </div>
+  <div class="story-card">
+    <img src="https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Whispers in the Walls" class="story-image">
+    <div class="story-content">
+      <h3 class="story-title">Whispers in the Walls</h3>
+      <p class="story-author">By Alexander Blackwood</p>
+      <p class="story-excerpt">When the Johnson family moves into their dream home, they soon realize that the house has dark secrets and a will of its own...</p>
+      <a href="/story/whispers-in-the-walls" class="read-more">Read More</a>
+    </div>
+  </div>
+  <div class="story-card">
+    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="The Last Frontier" class="story-image">
+    <div class="story-content">
+      <h3 class="story-title">The Last Frontier</h3>
+      <p class="story-author">By Luna Starr</p>
+      <p class="story-excerpt">As Earth becomes uninhabitable, a team of explorers embarks on a dangerous mission to terraform a distant planet...</p>
+      <a href="/story/the-last-frontier" class="read-more">Read More</a>
+    </div>
+  </div>
+</div>
+
+    <div class="pagination">
+      <button disabled="">Previous</button>
+      <button>Next</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const genreFilters = document.querySelectorAll('.genre-filter');
+      genreFilters.forEach(filter => {
+        filter.addEventListener('click', () => {
+          genreFilters.forEach(f => f.classList.remove('active'));
+          filter.classList.add('active');
+          // Here you would typically filter the stories based on the selected genre
+        });
+      });
+
+      const searchBar = document.querySelector('.search-bar input');
+      const searchButton = document.querySelector('.search-bar button');
+      searchButton.addEventListener('click', () => {
+        const searchTerm = searchBar.value;
+        // Here you would typically perform a search based on the search term
+        console.log('Searching for:', searchTerm);
+      });
+    });
+  </script>
+</body></html>
