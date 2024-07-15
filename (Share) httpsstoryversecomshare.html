@@ -1,0 +1,308 @@
+<html><head><base href="https://storyverse.com/share"><title>Share Your Stories - Story Verse</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+  :root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --accent-color: #e74c3c;
+    --background-color: #f0f8ff;
+    --text-color: #333;
+    --header-bg: #2c3e50;
+    --nav-bg: #34495e;
+    --card-bg: #fff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    transition: var(--transition);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  header {
+    background-color: var(--header-bg);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  nav {
+    background-color: var(--nav-bg);
+    padding: 0.5rem 0;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav li {
+    margin: 0 1rem;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  h1, h2 {
+    color: var(--secondary-color);
+  }
+
+  .share-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .share-option {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+  }
+
+  .share-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .share-option h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: var(--transition);
+  }
+
+  .btn:hover {
+    background-color: var(--secondary-color);
+  }
+
+  footer {
+    background-color: var(--header-bg);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+  }
+
+  #story-upload {
+    margin-top: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+
+  #story-upload form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #story-upload label {
+    margin-top: 1rem;
+  }
+
+  #story-upload input[type="text"],
+  #story-upload textarea,
+  #story-upload select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  #story-upload button {
+    margin-top: 1rem;
+    align-self: flex-start;
+  }
+
+  .community-guidelines {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    margin-top: 2rem;
+  }
+
+  .community-guidelines h2 {
+    color: var(--primary-color);
+  }
+
+  .community-guidelines ul {
+    padding-left: 1.5rem;
+  }
+
+  .sharing-tips {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    margin-top: 2rem;
+  }
+
+  .sharing-tips h2 {
+    color: var(--primary-color);
+  }
+
+  .sharing-tips ol {
+    padding-left: 1.5rem;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Share Your Stories</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/browse">Browse</a></li>
+      <li><a href="/write">Write</a></li>
+      <li><a href="/share">Share</a></li>
+      <li><a href="/communities">Communities</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2>Ready to share your masterpiece with the world?</h2>
+    <p>Choose from our various sharing options to get your story in front of eager readers!</p>
+
+    <div class="share-options">
+  <div class="share-option">
+    <h3>Public Library</h3>
+    <p>Share your story with all Story Verse users. Great for maximum exposure!</p>
+    <a href="#story-upload" class="btn">Share Publicly</a>
+  </div>
+  <div class="share-option">
+    <h3>Community Collections</h3>
+    <p>Share with specific writing communities. Perfect for targeted audiences!</p>
+    <a href="#story-upload" class="btn">Share to Communities</a>
+  </div>
+  <div class="share-option">
+    <h3>Limited Release</h3>
+    <p>Share with a select group of readers. Ideal for beta reading and feedback!</p>
+    <a href="#story-upload" class="btn">Limited Share</a>
+  </div>
+</div>
+
+    <section id="story-upload">
+      <h2>Upload Your Story</h2>
+      <form action="/submit-story" method="POST">
+        <label for="title">Story Title:</label>
+        <input type="text" id="title" name="title" required="">
+
+        <label for="synopsis">Synopsis:</label>
+        <textarea id="synopsis" name="synopsis" rows="4" required=""></textarea>
+
+        <label for="genre">Genre:</label>
+        <select id="genre" name="genre" required="">
+          <option value="">Select a genre</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="sci-fi">Science Fiction</option>
+          <option value="romance">Romance</option>
+          <option value="mystery">Mystery</option>
+          <option value="horror">Horror</option>
+          <option value="literary">Literary Fiction</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="story-text">Story Text:</label>
+        <textarea id="story-text" name="story-text" rows="10" required=""></textarea>
+
+        <label for="share-option">Sharing Option:</label>
+        <select id="share-option" name="share-option" required="">
+          <option value="">Select sharing option</option>
+          <option value="public">Public Library</option>
+          <option value="community">Community Collections</option>
+          <option value="limited">Limited Release</option>
+        </select>
+
+        <button type="submit" class="btn">Submit Story</button>
+      </form>
+    </section>
+
+    <section class="community-guidelines">
+      <h2>Community Guidelines</h2>
+      <p>To ensure a positive experience for all users, please adhere to the following guidelines:</p>
+      <ul>
+        <li>Be respectful to other authors and readers</li>
+        <li>Do not post offensive or inappropriate content</li>
+        <li>Properly tag mature content</li>
+        <li>Give credit for any borrowed ideas or content</li>
+        <li>Engage constructively with feedback and comments</li>
+      </ul>
+    </section>
+
+    <section class="sharing-tips">
+      <h2>Tips for Sharing Your Story</h2>
+      <ol>
+        <li>Polish your work before sharing - proofread and edit thoroughly</li>
+        <li>Write an engaging synopsis to hook potential readers</li>
+        <li>Choose the right genre and tags to help readers find your story</li>
+        <li>Engage with your readers through comments and discussions</li>
+        <li>Share your story on social media to attract more readers</li>
+        <li>Consider joining writing groups for support and feedback</li>
+        <li>Be open to constructive criticism and use it to improve your writing</li>
+      </ol>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2023 Story Verse. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const form = document.querySelector('form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Story submitted successfully! Our team will review it shortly.');
+        form.reset();
+      });
+
+      const shareOptions = document.querySelectorAll('.share-option .btn');
+      shareOptions.forEach(option => {
+        option.addEventListener('click', (e) => {
+          const shareOption = e.target.textContent;
+          const selectElement = document.getElementById('share-option');
+          for(let i = 0; i < selectElement.options.length; i++) {
+            if(selectElement.options[i].text === shareOption) {
+              selectElement.selectedIndex = i;
+              break;
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body></html>
